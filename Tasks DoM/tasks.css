@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+}
+
+.container {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    margin-right: 10px;
+
+}
+
+.picContainer {
+    width: 50%;
+    height: 50%;
+    float: left;
+}
+
+.pic {
+    width: 100%;
+    height: auto;
+}
+
+.pContainer {
+    float: right;
+    width: 40%;
+}
+
+
+h1 {
+    margin: auto;
+    width: 50%;
+    text-align: center; 
+}
+
+#products {
+    padding: 5px;
+    margin: auto;
+    width: 50%;
+    border: 1px solid khaki;
+    
+}
+
+
+#productControl {
+    padding: 5px;
+    margin: auto;
+    width: 50%;
+}

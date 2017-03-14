@@ -206,6 +206,8 @@ game.guess = function (guess) {
                 if (game.words.length <= 0) {
                     win();
                 } else {
+                    game.usedLetters = [];
+                    game.displayUsed();
                     wordDiv.innerHTML = '';
                     game.begin();
                 }
@@ -231,13 +233,15 @@ game.guess = function (guess) {
             if (game.lettersToGuess == 0) {
                 setTimeout(function () {
                     info.textContent = 'Correct Word';
-                    guessedWords.textContent += game.chosenWord;
+                    guessedWords.innerHTML += game.chosenWord + '<br>';
                     game.words.splice(game.words.indexOf(game.chosenWord), 1);
                 }, 1000);
                 setTimeout(function () {
                     if (game.words.length <= 0) {
                         win();
                     } else {
+                        game.usedLetters = [];
+                        game.displayUsed();
                         wordDiv.innerHTML = '';
                         game.begin();
                     }
@@ -268,9 +272,6 @@ game.begin = function () {
 }
 
 
-
-
-document.body.addEventListener('load', game.begin());
 
 var input = document.querySelector('#words>input');
 var readyToGuess = false;
@@ -308,3 +309,16 @@ function win() {
     info.style.fontSize = '3em';
     info.textContent = 'You win!';
 }
+
+
+
+
+setTimeout(function () {
+    game.begin()
+    input.focus();
+}, 500);
+
+
+
+
+
